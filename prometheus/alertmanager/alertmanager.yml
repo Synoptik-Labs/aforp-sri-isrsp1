@@ -1,7 +1,7 @@
 route:
   group_by: ['alertname', 'job']
   group_wait: 30s
-  group_interval: 5m
+  group_interval: 30s
   repeat_interval: 1h
   
   receiver: discord
@@ -11,11 +11,4 @@ receivers:
   - name: discord
   
     discord_configs:
-    - webhook_url: 'https://discord.com/api/webhooks/1212691064608002049/fTtFU6VWAhQ2xmC1LXeNHiwUJmivIcilSZnNnFGHG0-Aisuh45hT5r2QOJJ_5nIZK-_M'
-
-inhibit_rules:
-  - source_match:
-      severity: 'critical'
-    target_match:
-      severity: 'warning'
-    equal: ['alertname', 'dev', 'instance']
+    - webhook_url: https://discordapp.com/api/webhooks/1212691064608002049/fTtFU6VWAhQ2xmC1LXeNHiwUJmivIcilSZnNnFGHG0-Aisuh45hT5r2QOJJ_5nIZK-_M
